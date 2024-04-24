@@ -32,17 +32,6 @@ function Stopwatch() {
             }, 1000); // Change the interval duration here (e.g., 700 for 0.7 seconds)
         }
 
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'pageView',
-            'pageName': 'MyPage',
-            'userID': 'user123',
-            'data': {
-                'time': milsec,
-                'backgroundColor': backgroundColor
-            }
-        });
-
         return () => {
             clearInterval(colorIntervalId);
         };
@@ -97,7 +86,7 @@ function Stopwatch() {
     };
 
     const onGetDataLayer = () => {
-        console.log(window.dataLayer);
+        console.log(window.dataLayer.find((x) => x.event === "cnxEvents").data);
     }
 
     const onCartUpdate = () => {
