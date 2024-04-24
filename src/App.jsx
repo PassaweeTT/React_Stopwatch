@@ -1,12 +1,15 @@
 import React from "react";
-import Stopwatch from "./stopwatch";
+import Stopwatch from "./components/stopwatch";
+import NavBar from "./components/navBar";
+import "./App.css";
 
 const App = () => {
-  return (
-    <div>
-      <Stopwatch />
-    </div>
-  );
+    return (
+        <div>
+            <NavBar />
+            <Stopwatch />
+        </div>
+    );
 };
 
 export default App;
